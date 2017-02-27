@@ -1,0 +1,5 @@
+[{"front":"Who was the original author of Dracula?","back":"Bram Stoker"},
+{"front":"From which country does pita bread originate?","back":"Greece"},
+{"front":"What is the first book of the Old Testament?","back":"Genesis"},
+{"front":"What is the most famous Mexican beer?","back":"Corona"},
+{"front":"What is the lightest existing metal?","back":"Aluminium"}]

@@ -1,16 +1,15 @@
-// Constructor for Basic flashcard.
-var BasicFC = function(front, back) {
-	this.front = front;
-	this.back = back;
-	this.printFront = function() {
-		console.log(this.front);
-	};
-	this.printBack = function() {
-		console.log(this.back);
-	};
-	this.printAnswer = function() {
-		console.log("Sorry, the correct answer is " + this.back + ".");
-	};
+// The constructor for the basic flashcard.
+var basicFC = function(front, back) {
+    this.front = front;
+    this.back = back;
 }
-
-module.exports = BasicFC;
+basicFC.prototype.printCard = function() {
+    console.log('Front: ' + this.front + ', ' + 'Back: ' + this.back);
+};
+basicFC.prototype.printFront = function() {
+    console.log(this.front);
+}
+basicFC.prototype.printAnswer = function() {
+    console.log('Wrong! The correct answer is ' + this.back + '.');
+}
+module.exports = basicFC;

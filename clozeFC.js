@@ -1,19 +1,17 @@
-// Constructor for Cloze flashcard.
-var ClozeFC = function(text, cloze) {
-	this.text = text;
-	this.cloze = cloze;
-	this.printText = function() {
-		console.log(this.text + "_________.");
-	};
-	this.printCloze = function() {
-		console.log(this.cloze);
-	};
-	this.correct = function() {
-		console.log("Correct!");
-	};
-	this.incorrect = function() {
-		console.log("Incorrect! Here is the answer: \n" + this.text + " " + this.cloze + ".");
-	};
+// The constructor for the cloze flashcard.
+var clozeFC = function(text, cloze) {
+    this.text = text;
+    this.cloze = this.text.match(/\(([^)]+)\)/)[1];
+    this.printCloze = function() {
+        console.log(this.cloze);
+    }
+    this.printText = function() {
+        console.log(this.text);
+    }
+    this.message = this.text.replace('(' + this.cloze + ')', '________');
+}
+clozeFC.prototype.printAnswer = function() {
+    console.log('Sorry, wrong. This is the correct sentence: \n' + this.text.replace(/[{()}]/g, ''));
 }
 
-module.exports = ClozeFC;
+module.exports = clozeFC;
