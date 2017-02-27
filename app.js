@@ -5,8 +5,8 @@ const fs = require("fs");
 var correct = 0;
 var wrong = 0;
 var cardArray = [];
-// ********************************* Main Process *************************************
 
+// main interface
 const flashcards = () => {
 
         inquirer.prompt([{
@@ -59,7 +59,7 @@ const createCards = (promptType, logFile) => {
         }
     });
 };
-
+// This runs the quiz
 const quiz = (logFile, x) => {
     fs.readFile(logFile, "utf8", function(error, data) {
         var jsonContent = JSON.parse(data);
@@ -145,7 +145,6 @@ const clozePrompt = [{
 }]
 
 const makeMore = {
-    //Prompt to find out if user wants to make more cards (default is yes)
     type: 'confirm',
     name: 'makeMore',
     message: 'You want to create another card? (hit enter for YES)?',
